@@ -4,21 +4,14 @@
   
   /* ################ inicio ################*/
 
-  h1{
-    font-size: 50px;
-}
-h5{
-  color: white;
-}
-
-.contenedor{
+.contenedor {
     width: 90%;
     max-width: 1400px;
     margin: auto;
     overflow: hidden;
 }
 /* ################ MENU DE NAVEGACION ############### */
-nav{
+nav {
     width: 100%;
     height: 80px;
     background-color: #E8151E;
@@ -27,21 +20,21 @@ nav{
     top: 0;
 }
 
-.nav{
+.nav {
     display: flex;
     height: 80px;
     width: 100%;
     align-items: center;
 }
 
-.enlaces-header{
+.enlaces-header {
     font-weight: 300;
     margin: auto;
     transition: all ease-in-out .6s;
     /* z-index: */
 }
 
-.nav .enlaces-header a{
+.nav .enlaces-header a {
     color: #1e00a5;
     text-decoration: none;
     margin-left: 20px;
@@ -49,14 +42,14 @@ nav{
     border-radius: 10px;
 }
 
-.nav .enlaces-header a:hover{
+.nav .enlaces-header a:hover {
     color: #ffffff;
     background-color: #110056;
     border-color: #110056;
     transition: all ease-in-out .6s;
 }
 
-.contenido-header{
+.contenido-header {
     width: 80%;
     height: 500px;
     display: flex;
@@ -66,14 +59,14 @@ nav{
     margin: 0 auto;
 }
 
-.contenido-header > img{
+.contenido-header > img {
     width: 200px;
     height: 400px;
     margin-left: 15%;
     animation: ease-in animacion 0.5s;
 }
 
-@keyframes animacion{
+@keyframes animacion {
     0%{
         transform: scale(0);
     }
@@ -82,13 +75,13 @@ nav{
     }
 }
 
-.text-header{
+.text-header {
     margin: 0 150px 0 0px;
 }
 
 /* ############# SECTION INTERESES ############# */
 
-.title{
+.title {
     margin-top: 50px;
     display: block;
     width: 100%;
@@ -96,11 +89,11 @@ nav{
     color: #ffffff;
 }
 
-.Intereses{
+.Intereses {
     background-color: #282A6F;
 }
 
-.content-Intereses{
+.content-Intereses {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 50px;
@@ -113,7 +106,7 @@ nav{
     color: #ffffff;
 }
 
-.content-Eventos{
+.content-Eventos {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 50px;
@@ -128,6 +121,10 @@ nav{
 
 .Enlacesdeintereses {
     background-color: #282A6F;
+}
+
+.Enlacesdeintereses h5 {
+    color: #FFF;
 }
 
 /* FOOTER */
