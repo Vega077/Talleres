@@ -1,11 +1,33 @@
 *{
     image-rendering: auto
   }
-body{
-    background-color: rgb(232, 129, 129);
+
+body {
+    align-items: center;
+    background-color: #992d2d;
+}
+
+input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
   /* ################ inicio ################*/
-
+h5{
+    color: black;
+}
+p{
+    color: black;
+}
+.carousel-inner{
+    color: black;
+}
 .contenedor {
     width: 90%;
     max-width: 1400px;

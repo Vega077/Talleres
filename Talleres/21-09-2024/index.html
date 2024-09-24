@@ -8,6 +8,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad-4</title>
 </head>
+<script>
+    function setenta() {
+        let n1 = parseFloat(document.getElementById("n1").value)
+        let n2 = parseFloat(document.getElementById("n2").value)
+        let n3 = parseFloat(document.getElementById("n3").value)
+        
+
+        var setenta = ((n1 + n2 + n3) / 3 )* 0.7;
+        document.getElementById('set').value=setenta
+
+
+    }
+
+    function treinta(){
+        let exm = parseFloat(document.getElementById("exm").value)
+        let set = parseFloat(document.getElementById("set").value)
+        var treinta = (exm)*0.3;
+
+        var total = (treinta + set);
+        document.getElementById("def").value= total;
+
+        if(total<2){
+            Swal.fire({
+                title: "Lo sentimos",
+                text: "Ha reprobado la materia",
+                icon: "error"
+              });
+        }else if(total>=3){
+            Swal.fire({
+                title: "Felicidadess",
+                text: "Has aprobado la materia",
+                icon: "success"
+              });
+        }
+
+    }
+
+function sumar() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    
+    if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById('resultado1').innerText = "Por favor, ingresa números válidos.";
+    } else {
+        const suma = num1 + num2;
+        document.getElementById('resultado1').innerText = "Resultado: " + suma;
+    }
+}
+
+function restar() {
+    const num3 = parseFloat(document.getElementById('num3').value);
+    const num4 = parseFloat(document.getElementById('num4').value);
+    
+    if (isNaN(num3) || isNaN(num4)) {
+        document.getElementById('resultado2').innerText = "Por favor, ingresa números válidos.";
+    } else {
+        const resta = num3 - num4;
+        document.getElementById('resultado2').innerText = "Resultado: " + resta;
+    }
+}
+function multiplicar() {
+    const num5 = parseFloat(document.getElementById('num5').value);
+    const num6 = parseFloat(document.getElementById('num6').value);
+    
+    if (isNaN(num5) || isNaN(num6)) {
+        document.getElementById('resultado3').innerText = "Por favor, ingresa números válidos.";
+    } else {
+        const producto = num5 * num6;
+        document.getElementById('resultado3').innerText = "Resultado: " + producto;
+    }
+}
+function dividir() {
+    const num7 = parseFloat(document.getElementById('num7').value);
+    const num8 = parseFloat(document.getElementById('num8').value);
+    
+    if (isNaN(num7) || isNaN(num8)) {
+        document.getElementById('resultado4').innerText = "Por favor, ingresa números válidos.";
+    } else if (num8 === 0) {
+        document.getElementById('resultado4').innerText = "No se puede dividir entre cero.";
+    } else {
+        const cociente = num7 / num8;
+        document.getElementById('resultado4').innerText = "Resultado: " + cociente;
+    }
+}
+</script>
 <body>
     <!-- MENU Y VISTA PRINCIPAL -->
     <header id="inicio" class="inicio">
@@ -23,66 +108,201 @@
             </section>
         </nav><br><br><br><br>
         <!-- CARRUSEL -->
-        <div class="contenedor">
-            <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/logo-coca-cola.jpg" class="d-block w-100" height="600px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
                 </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./img/logo-coca-cola.jpg" class="d-block w-100" alt="..." height="500px">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/logo-coca-cola.jpg" class="d-block w-100" alt="..." height="500px">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/logo-coca-cola.jpg" class="d-block w-100" alt="..." height="500px">
-                  </div>
+                <div class="carousel-item">
+                    <img src="./img/logo-coca-cola.jpg" class="d-block w-100" height="600px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+                <div class="carousel-item">
+                    <img src="./img/logo-coca-cola.jpg" class="d-block w-100" height="600px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </header>
-    <!-- ACORDEON -->
-    <section id="Acordeon" class="Acordeon">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Accordion Item #1
-                    </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                    <p>
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
-                          Toggle width collapse
-                        </button>
-                      </p>
-                      <div style="min-height: 120px;">
-                        <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                          <div class="card card-body" style="width: 300px;">
-                            This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
-                          </div>
+        <br>
+        <div class="container-accordion">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="row align-items-start">
+                    <div class="col">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    Calculadora Académica
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <strong>A continucacion dijite las notas en cada uno de los parciales</strong>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="n1" placeholder="parcial uno">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="n2" placeholder="parcial dos">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="n3" placeholder="parcial tres">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="set" placeholder="Setenta" readonly>
+                                    </div>
+                                    <div><button type="button" class="btn btn-outline-dark"
+                                        onclick="setenta()">setenta</button>
+                                    </div>
+                                    <br>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="exm" placeholder="Examen Final">
+                                    </div>
+                                    <div><button type="button" class="btn btn-outline-dark"
+                                        onclick="treinta()">Total</button>
+                                    </div>
+                                    <br>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="def" placeholder="Definitiva">
+                                    </div>
+
+
+                                </div>
+                            </div>
                         </div>
-                      </div>
+                    </div>
+
                 </div>
+            </div>
+            <br>
+            <div class="container text-center">
+                <div class="row align-items-start">
+                    <div class="col">
+                        <p>
+                            <button class="btn btn-outline-light" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseWidthExample" aria-expanded="false"
+                                aria-controls="collapseWidthExample">
+                                SUMAR
+                            </button>
+                        </p>
+                        <div style="min-height: 120px;">
+                            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                                <div class="card card-body" style="width: 300px;">
+                                    <div class="suma">
+                                        <p>Ingresa dos numeros</p>
+                                        <input type="number" id="num1" placeholder="Número 1">
+                                        <input type="number" id="num2" placeholder="Número 2"><br>
+                                        <button onclick="sumar()" >Sumar</button>
+                                        <p id="resultado1"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <button class="btn btn-outline-light" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseWidthExample2" aria-expanded="false"
+                                aria-controls="collapseWidthExample">
+                                RESTAR
+                            </button>
+                        </p>
+                        <div style="min-height: 120px;">
+                            <div class="collapse collapse-horizontal" id="collapseWidthExample2">
+                                <div class="card card-body" style="width: 300px;">
+                                    <div class="resta">
+                                        <p>Ingresa dos numeros</p>
+                                        <input type="number" id="num3" placeholder="Número 1">
+                                        <input type="number" id="num4" placeholder="Número 2">
+                                        <button onclick="restar()">Restar</button>
+                                        <p id="resultado2"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <button class="btn btn-outline-light" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseWidthExample3" aria-expanded="false"
+                                aria-controls="collapseWidthExample">
+                                MULTIPLICAR
+                            </button>
+                        </p>
+                        <div style="min-height: 120px;">
+                            <div class="collapse collapse-horizontal" id="collapseWidthExample3">
+                                <div class="card card-body" style="width: 300px;">
+                                    <div class="Multiplicador">
+                                        <p>Ingresa dos numeros</p>
+                                        <input type="number" id="num5" placeholder="Número 1">
+                                        <input type="number" id="num6" placeholder="Número 2">
+                                        <button onclick="multiplicar()">Multiplicar</button>
+                                        <p id="resultado3"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p>
+                            <button class="btn btn-outline-light" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseWidthExample4" aria-expanded="false"
+                                aria-controls="collapseWidthExample">
+                                DIVIDIR
+                            </button>
+                        </p>
+                        <div style="min-height: 120px;">
+                            <div class="collapse collapse-horizontal" id="collapseWidthExample4">
+                                <div class="card card-body" style="width: 300px;">
+                                    <div class="divicion">
+                                        <p>ingresa dos numeros</p>
+                                        <input type="number" id="num7" placeholder="Número 1">
+                                        <input type="number" id="num8" placeholder="Número 2">
+                                        <button onclick="dividir()">Dividir</button>
+                                        <p id="resultado4"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="Operaciones" class="Operaciones">
-        <h1>hola</h1>
-    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>
