@@ -1,0 +1,20 @@
+
+header{
+    background-color: #333333;
+}
+
+
+.Videos{
+    background-color: #333333;
+}
+
+footer {
+    background-color: #ffffff; /* Cambia el color de fondo */
+    color: #333333; /* Cambia el color del texto */
+}
+footer img {
+    transition: transform 0.3s;
+}
+footer img:hover {
+    transform: scale(1.1); /* Efecto de hover */
+}

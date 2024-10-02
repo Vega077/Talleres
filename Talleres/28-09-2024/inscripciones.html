@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Empresa X</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            background-image: url(https://fondosmil.co/fondo/32312.jpg); /* Imagen de fondo */
+            background-size: cover; /* La imagen cubre toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Ajusta el fondo a la altura de la pantalla */
+            overflow: hidden; /* Quita el desplazamiento */
+        }
+        form {
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        input[type="text"], input[type="date"], select {
+            width: 100%;
+            padding: 10px 0;
+            margin: 10px 0;
+            /* border: none; */
+            border-radius: 5px;
+            transition: background-color 0.5s;
+        }
+        input[type="text"]:hover, input[type="date"]:hover, select:hover {
+            background-color: orange;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            
+        }
+        button:hover {
+            background-color: orange;
+        }
+
+        #eventos {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <label for="tipoDocumento">Tipo de Documento:</label>
+        <select id="tipoDocumento" required>
+            <option value="cedula">Cedula</option>
+            <option value="TI">Tarjeta de identidad</option>
+        </select>
+    <div class="datos">
+        <label for="numeroDocumento">Número de Documento:</label>
+        <input type="text" id="numeroDocumento" pattern="\d{7,10}" title="Esto no es un numero de documento, por favor intentelo de nuevo." required>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" required>
+    </div>
+
+        <p id="edad"></p>
+
+        <div id="eventos">
+            <label for="eventosInteres">Seleccionar Evento de Interés:</label>
+            <select id="eventosInteres" type="date" class="form-control" placeholder="fecha-nacimiento" aria-label="fecha-nacimiento" aria-describedby="addon-wrapping">
+                <option value="">Seleccione...</option>
+                <option value="evento1">Torneo Por Pass Royale - 100% Descuento</option>
+                <option value="evento2">Torneo Creadores de Contenido - 10% Descuento</option>
+                <option value="evento3">Torneo Global - 5% Descuento</option>
+            </select>
+            <p id="precioEvento"></p>
+        </div>
+
+        <button type="submit">Inscribirme</button>
+    </form>
+
+    <script>
+        document.getElementById('fechaNacimiento').addEventListener('change', function() {
+            const fechaNacimiento = new Date(this.value);
+            const hoy = new Date();
+            const edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+            document.getElementById('edad').innerText = `Edad: ${edad} años`;
+            document.getElementById('eventos').style.display = edad > 15 ? 'block' : 'none';
+        });
+
+        document.getElementById('eventosInteres').addEventListener('change', function() {
+            const precios = {
+                evento1: 'Precio: $0',
+                evento2: 'Precio: $180',
+                evento3: 'Precio: $190'
+            };
+            document.getElementById('precioEvento').innerText = precios[this.value];
+        });
+    </script>
+</body>
+</html>
