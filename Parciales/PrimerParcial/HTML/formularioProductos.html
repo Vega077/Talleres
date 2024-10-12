@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Productos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script>
-        function calcularTotal() {
-            var precio = document.getElementById("producto").value;
-            var cantidad = document.getElementById("cantidad").value;
-            var total = precio * cantidad;
-            document.getElementById("total").value = total;
-        }
-    </script>
 </head>
 <body>
     <div class="container mt-5">
@@ -42,6 +34,12 @@
         </form>
     </div>
     <script>
+        function calcularTotal() {
+            var precio = document.getElementById("producto").value;
+            var cantidad = document.getElementById("cantidad").value;
+            var total = precio * cantidad;
+            document.getElementById("total").value = total;
+        }
         document.getElementById("producto").addEventListener("change", function() {
             document.getElementById("precio").value = this.value;
         });
