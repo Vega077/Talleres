@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Productos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        function calcularTotal() {
+            var precio = document.getElementById("producto").value;
+            var cantidad = document.getElementById("cantidad").value;
+            var total = precio * cantidad;
+            document.getElementById("total").value = total;
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Selecciona tus productos</h2>
+        <form>
+            <div class="form-group">
+                <label for="producto">Producto:</label>
+                <select id="producto" class="form-control" onchange="calcularTotal()">
+                    <option value="0">Seleccione un producto</option>
+                    <option value="500">Huevos - 500 pesos</option>
+                    <option value="1000">Pan - 1000 pesos</option>
+                    <option value="12000">Café - 12000 pesos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="text" id="precio" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" class="form-control" oninput="calcularTotal()">
+            </div>
+            <div class="form-group">
+                <label for="total">Total a Pagar:</label>
+                <input type="text" id="total" class="form-control" readonly>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById("producto").addEventListener("change", function() {
+            document.getElementById("precio").value = this.value;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Estudiantes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#programa').change(function() {
+                var programa = $(this).val();
+                $('.opciones').hide();
+                if (programa === 'Ing. de sistemas') {
+                    $('#lenguajes').show();
+                } else if (programa === 'Ing. Civil') {
+                    $('#edicion').show();
+                } else if (programa === 'Ing. mecánica') {
+                    $('#vehiculo').show();
+                }
+            });
+
+            $('#estadoCivil').change(function() {
+                var estado = $(this).val();
+                if (estado === 'casado' || estado === 'union_libre') {
+                    $('#conyuge').show();
+                } else {
+                    $('#conyuge').hide();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <br>
+    <div class="container">
+        <h1>Formulario de Inscripción de Estudiantes</h1>
+        <form>
+            <div class="form-group">
+                <label for="codigo">Código del Estudiante:</label>
+                <input type="text" class="form-control" id="codigo" required>
+            </div>
+            <div class="form-group">
+                <label for="programa">Programa Académico:</label>
+                <select class="form-control" id="programa" required>
+                    <option value="">Seleccione...</option>
+                    <option value="Ing. de sistemas">Ing. de sistemas</option>
+                    <option value="Ing. Civil">Ing. Civil</option>
+                    <option value="Ing. mecánica">Ing. mecánica</option>
+                </select>
+            </div>
+            <div class="opciones" id="lenguajes" style="display:none;">
+                <label>¿Maneja algún lenguaje de programación?</label><br>
+                <input type="checkbox" value="Java"> Java<br>
+                <input type="checkbox" value="Python"> Python<br>
+                <input type="checkbox" value="JavaScript"> JavaScript<br>
+            </div>
+            <div class="opciones" id="edicion" style="display:none;">
+                <label>¿Qué programas de edición de imágenes maneja?</label><br>
+                <input type="checkbox" value="Photoshop"> Photoshop<br>
+                <input type="checkbox" value="GIMP"> GIMP<br>
+                <input type="checkbox" value="CorelDRAW"> CorelDRAW<br>
+            </div>
+            <div class="opciones" id="vehiculo" style="display:none;">
+                <label>¿Sabe manejar vehículo?</label><br>
+                <input type="radio" name="vehiculo" value="si"> Sí<br>
+                <input type="radio" name="vehiculo" value="no"> No<br>
+            </div>
+            <div class="form-group">
+                <label for="estadoCivil">Estado Civil:</label>
+                <select class="form-control" id="estadoCivil" required>
+                    <option value="">Seleccione...</option>
+                    <option value="soltero">Soltero</option>
+                    <option value="casado">Casado</option>
+                    <option value="union_libre">Unión Libre</option>
+                </select>
+            </div>
+            <div id="conyuge" style="display:none;">
+                <div class="form-group">
+                    <label for="nombreConyuge">Nombre del Cónyuge:</label>
+                    <input type="text" class="form-control" id="nombreConyuge">
+                </div>
+                <div class="form-group">
+                    <label for="telefonoConyuge">Teléfono del Cónyuge:</label>
+                    <input type="text" class="form-control" id="telefonoConyuge">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
